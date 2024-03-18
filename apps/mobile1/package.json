@@ -10,6 +10,15 @@
     "react-native": "*",
     "react-native-svg": "*",
     "metro-config": "*",
-    "react-native-svg-transformer": "*"
+    "react-native-svg-transformer": "*",
+    "redux-persist": "*",
+    "react-redux": "*",
+    "react-fast-compare": "*",
+    "redux": "*",
+    "@reduxjs/toolkit": "*",
+    "@react-native-async-storage/async-storage": "*",
+    "redux-thunk": "*",
+    "redux-logger": "*",
+    "lodash": "*"
   }
 }

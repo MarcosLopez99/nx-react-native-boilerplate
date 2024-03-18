@@ -11,5 +11,5 @@
     "src/**/*.spec.tsx",
     "test-setup.ts"
   ],
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "../../libs/store/src/lib/app/dispatch.tsx", "../../libs/store/src/lib/app/reducers.ts", "src/common/store/store.ts"]
 }

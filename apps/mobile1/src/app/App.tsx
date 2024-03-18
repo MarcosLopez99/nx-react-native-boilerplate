@@ -1,29 +1,31 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import { Divider, Text } from '@nx-monorepo-rn-boilerplate/ui-components';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AppScreen from '../screens/AppScreen';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import {
+  APP_FEATURE_KEY,
+  createRootStore,
+  transformEntityStateToPersist,
+} from '@nx-monorepo-rn-boilerplate/store';
 
 export const App = () => {
+  const persistConfig = {
+    key: 'root',
+    storage: AsyncStorage,
+    whitelist: [APP_FEATURE_KEY],
+    transforms: [transformEntityStateToPersist],
+  };
+
+  const { store, persistor } = createRootStore(persistConfig);
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.text}>Hello from mobile 1</Text>
-        <Divider top={10} botton={10} color="blue" />
-      </SafeAreaView>
-    </>
+    <PersistGate persistor={persistor}>
+      <Provider store={store}>
+        <AppScreen />
+      </Provider>
+    </PersistGate>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-    color: 'black',
-  },
-});
 
 export default App;
