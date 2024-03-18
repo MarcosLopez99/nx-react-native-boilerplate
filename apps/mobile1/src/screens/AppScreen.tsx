@@ -4,6 +4,7 @@ import { Text } from '@nx-monorepo-rn-boilerplate/ui-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@nx-monorepo-rn-boilerplate/models';
 import { appActions, peopleActions } from '@nx-monorepo-rn-boilerplate/store';
+import { validateEmail } from '@nx-monorepo-rn-boilerplate/utils';
 
 const AppScreen = () => {
   const { loading } = useSelector((state: RootState) => state.app);
@@ -20,6 +21,7 @@ const AppScreen = () => {
   useEffect(() => {
     setLoading(true);
     dispatch(peopleActions.fetchPeople() as any);
+    validateEmail("")
     setTimeout(() => {
       setLoading(false);
     }, 3000);
