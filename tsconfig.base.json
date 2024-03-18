@@ -21,8 +21,7 @@
       "@nx-monorepo-rn-boilerplate/store": ["libs/store/src/index.ts"],
       "@nx-monorepo-rn-boilerplate/ui-components": [
         "libs/ui-components/src/index.ts"
-      ],
-      "@nx-monorepo-rn-boilerplate/utils": ["libs/utils/src/index.ts"]
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
